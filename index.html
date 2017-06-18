@@ -9,7 +9,30 @@
 </head>
 <body ng-app="followersApp">
   <div ng-controller="MainController">
-	<h2>Followers</h2
+	<nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#/">Followers</a>
+        </div>
+      </div>
+    </nav>
+	<div class="container">
+        <h1>Github Users</h1>
+		<table class="table"> 
+			<thead> 
+				<tr> 
+					<th>Avatar</th> 
+					<th>User</th> 
+				</tr> 
+			</thead> 
+			<tbody> 
+				<tr ng-repeat="user in githubUsers"> 
+					<td><img src="{{user.avatar_url}}" height="32" width="32"/></td> 
+					<td>{{user.login}}</td> 
+				</tr> 
+			</tbody> 
+		</table>
+    </div>
   </div>
   <script src="https://code.angularjs.org/1.5.3/angular.js"></script>
   <script src="index.js"></script>
