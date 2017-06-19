@@ -1,0 +1,26 @@
+<div>
+	<div class="modal-header">
+		<div class="row">
+			<div class="col-sm-11"><h4 class="modal-title">Followers</h4></div>
+			<div class="col-sm-1"><button class="close" ng-click="$close()">x</button></a></div>
+		</div>
+    </div>
+	<div class="modal-body">
+		<div class="scroll-container">
+			<table class="table table-hover table-striped table-condensed"> 
+				<thead> 
+					<tr> 
+						<th>Avatar</th> 
+						<th>User</th> 
+					</tr> 
+				</thead> 
+				<tbody> 
+					<tr ng-repeat="follower in followers"> 
+						<td><a target="_blank" href="{{follower.html_url}}"><img src="{{follower.avatar_url}}" height="32" width="32"/></a></td> 
+						<td><a target="_blank" href="{{follower.html_url}}">{{follower.login}}</a></td>
+					</tr>
+				</tbody> 
+			</table>
+		</div>
+	</div>
+</div>

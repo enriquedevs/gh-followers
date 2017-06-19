@@ -1,2 +1,6 @@
 
 /* CSS STYLESHEET */
+.scroll-container{
+	height: 300px !important;
+    overflow: scroll;
+}
