@@ -9,7 +9,7 @@
 		</thead> 
 		<tbody> 
 			<tr ng-repeat="user in githubUsers"> 
-				<td><a target="_blank" href="{{user.html_url}}"><img src="{{user.avatar_url}}" height="32" width="32"/></a></td> 
+				<td><a target="_blank" href="{{user.html_url}}"><img src="{{user.avatar_url}}" height="28" width="28"/></a></td> 
 				<td><a target="_blank" href="{{user.html_url}}">{{user.login}}</a></td>
 				<td><button ng-click="viewFollowers($index)">View Followers</button></td>
 			</tr>

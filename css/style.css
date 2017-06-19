@@ -4,3 +4,6 @@
 	height: 300px !important;
     overflow: scroll;
 }
+.white-text{
+	color: white !important;
+}

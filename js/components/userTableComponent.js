@@ -15,13 +15,16 @@ app.component('userTable', {
 		}
 		
 		$scope.viewFollowers = function(index){
+			$scope.user = $scope.githubUsers[index].login;
+			$scope.userUrl = $scope.githubUsers[index].html_url;
+			$scope.userAvatarUrl = $scope.githubUsers[index].avatar_url;
 			$scope.followers = [];
 			$http.get($scope.githubUsers[index].followers_url).then(function(response) {
 				$scope.followers = response.data;
 			});
 			var modalInstance = $uibModal.open({
 				animation: true,
-				backdrop: 'static',
+				backdrop: true,
 				templateUrl: 'html/templates/followerList.html',
 				scope: $scope
 			});

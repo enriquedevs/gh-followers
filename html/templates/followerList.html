@@ -1,7 +1,8 @@
 <div>
 	<div class="modal-header">
 		<div class="row">
-			<div class="col-sm-11"><h4 class="modal-title">Followers</h4></div>
+			<div class="col-sm-1"><a target="_blank" href="{{userUrl}}"><img src="{{userAvatarUrl}}" height="30" width="30"/></a></div>
+			<div class="col-sm-10"><h4 class="modal-title"><b>{{user}}</b>'s followers</h4></div>
 			<div class="col-sm-1"><button class="close" ng-click="$close()">x</button></a></div>
 		</div>
     </div>
@@ -16,7 +17,7 @@
 				</thead> 
 				<tbody> 
 					<tr ng-repeat="follower in followers"> 
-						<td><a target="_blank" href="{{follower.html_url}}"><img src="{{follower.avatar_url}}" height="32" width="32"/></a></td> 
+						<td><a target="_blank" href="{{follower.html_url}}"><img src="{{follower.avatar_url}}" height="24" width="24"/></a></td> 
 						<td><a target="_blank" href="{{follower.html_url}}">{{follower.login}}</a></td>
 					</tr>
 				</tbody> 
