@@ -19,6 +19,12 @@
 * [Github API Docs](https://developer.github.com/v3/)
 * [Angular 1.5 Docs](https://code.angularjs.org/1.5.3/docs/guide)
 
+# Notes
+
+* Use Firefox browser to run the app succesfully in the local filesystem
+* To run the app in other browsers it needs to be deployed on a web server (XMLHttpRequest throw an exception due to try accessing the file directly in the local filesystem)
+* The starter file of the app is index.html
+
 
 
 
