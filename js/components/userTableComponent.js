@@ -1,26 +1,23 @@
 
 app.component('userTable', {
     templateUrl: 'html/templates/userTable.html',
-    controller: function($scope,$http,$uibModal) {
+    controller: function($scope,$http,$uibModal,githubService) {
 		$scope.githubUsers = [];
 	
 		$scope.init = function(){
-			$scope.getGithubUsers();
-		}
-		
-		$scope.getGithubUsers = function(){
-			$http.get('https://api.github.com/users?since=0').then(function(response) {
-				$scope.githubUsers = response.data;
+			githubService.getUsers().then(function(users) {
+				$scope.githubUsers = users;
 			});
 		}
+		$scope.init();
 		
 		$scope.viewFollowers = function(index){
 			$scope.user = $scope.githubUsers[index].login;
 			$scope.userUrl = $scope.githubUsers[index].html_url;
 			$scope.userAvatarUrl = $scope.githubUsers[index].avatar_url;
 			$scope.followers = [];
-			$http.get($scope.githubUsers[index].followers_url).then(function(response) {
-				$scope.followers = response.data;
+			githubService.getFollowers($scope.githubUsers[index].followers_url).then(function(followers) {
+				$scope.followers = followers;
 			});
 			var modalInstance = $uibModal.open({
 				animation: true,
@@ -29,7 +26,5 @@ app.component('userTable', {
 				scope: $scope
 			});
 		}
-		
-		$scope.init();
 	}
 });
