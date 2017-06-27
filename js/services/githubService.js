@@ -3,27 +3,25 @@ app.service('githubService', function($q,$http) {
 	
 	const userListUrl = 'https://api.github.com/users?since=0';
 
-    this.getUsers = function () {
-		var deferred = $q.defer();
-		var users;
-		$http.get(userListUrl).then(function(response) {
+    this.getUsers = () => {
+		const deferred = $q.defer();
+		$http.get(userListUrl).then((response) => {
 			deferred.resolve(response.data);
-		}, function(error) {
+		}, (error) => {
 			deferred.reject(error);
 		});
-		users = deferred.promise;
+		const users = deferred.promise;
 		return $q.when(users);
     }
 	
-	this.getFollowers = function (followersUrl) {
-		var deferred = $q.defer();
-		var followers;
-		$http.get(followersUrl).then(function(response) {
+	this.getFollowers = (followersUrl) => {
+		const deferred = $q.defer();
+		$http.get(followersUrl).then((response) => {
 			deferred.resolve(response.data);
-		}, function(error) {
+		}, (error) => {
 			deferred.reject(error);
 		});
-		followers = deferred.promise;
+		const followers = deferred.promise;
 		return $q.when(followers);
 	}
 	
