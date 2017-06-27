@@ -9,7 +9,6 @@ app.component('userTable', {
 				$scope.githubUsers = users;
 			});
 		}
-		$scope.init();
 		
 		$scope.viewFollowers = function(index){
 			$scope.user = $scope.githubUsers[index].login;
